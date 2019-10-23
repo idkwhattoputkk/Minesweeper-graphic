@@ -1,4 +1,4 @@
-# PET-CLUBS
+# MINESWEEPER-GRAPHIC
 
 # About Minesweeper-graphic
 
