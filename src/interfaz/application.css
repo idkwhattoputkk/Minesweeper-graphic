@@ -1,0 +1,24 @@
+.button:hover{
+	-fx-background-color : #A9A9A9;
+	-fx-text-fill: white; 
+}
+.label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+.button{
+	-fx-background-color : white;
+	-fx-text-fill: black;
+    -fx-font-family: "Arial Narrow";
+}
+.root{
+	-fx-background-image: url("http://images2.fanpop.com/image/photos/8700000/Minesweeper-minesweeper-8780125-450-260.jpg");
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}
+.button:active{
+  -fx-background-color: #3e8e41;
+  -fx-box-shadow: 0 5px #666;
+  -fx-transform: translateY(4px);
+}
