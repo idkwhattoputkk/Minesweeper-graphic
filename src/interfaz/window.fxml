@@ -7,14 +7,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane  prefHeight="565.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.Controller">
+<BorderPane  fx:id="ac" prefHeight="565.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.Controller">
    <bottom>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="349.0" text="Desarrollado por A00351911" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="30.0" />
-         </font>
       </Label>
    </bottom>
    <top>

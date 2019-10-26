@@ -18,13 +18,12 @@ import modelo.NivelNoExtisteException;
 
 public class Controller {
 	Buscaminas bs;
+	
 	@FXML
 	private BorderPane ac;
 	
 	private GridPane grd1;
 	
-	@FXML
-	private TextField txt1;
 	
 	
 	
