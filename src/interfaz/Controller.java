@@ -1,16 +1,9 @@
 package interfaz;
 
-import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import modelo.Buscaminas;
@@ -54,9 +47,6 @@ public class Controller {
 			e.printStackTrace();
 		}
 	}
-
-
-
 	private void printMatrix() {
 			grd1= new GridPane();
 
@@ -64,12 +54,13 @@ public class Controller {
 			for (int j = 0; j < bs.darCasillas()[0].length; j++) {
 				bs.darCasillas()[i][j].modificarValor(bs.cantidadMinasAlrededor(i, j));
 				Button b = new Button();
-				b.setText("" + bs.darCasillas()[i][j].mostrarValorCasilla() + "");
-				b.setPrefWidth(50);
+				b.setText(bs.darCasillas()[i][j].mostrarValorCasilla());
+				b.setPrefWidth(10);
 				grd1.add(b, i, j);
 			}
 		}
 		grd1.setAlignment(Pos.CENTER);
 		ac.setCenter(grd1);
 	}
+	
 }
