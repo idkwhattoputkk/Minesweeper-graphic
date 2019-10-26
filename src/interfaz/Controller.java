@@ -61,9 +61,10 @@ public class Controller {
 			grd1= new GridPane();
 
 		for (int i = 0; i < bs.darCasillas().length; i++) {
-			for (int j = 0; j < bs.darCasillas().length; j++) {
+			for (int j = 0; j < bs.darCasillas()[0].length; j++) {
+				bs.darCasillas()[i][j].modificarValor(bs.cantidadMinasAlrededor(i, j));
 				Button b = new Button();
-				b.setText("" + bs.darCasillas()[i][j] + "");
+				b.setText("" + bs.darCasillas()[i][j].mostrarValorCasilla() + "");
 				b.setPrefWidth(50);
 				grd1.add(b, i, j);
 			}
