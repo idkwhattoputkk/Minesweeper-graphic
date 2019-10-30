@@ -18,8 +18,6 @@ public class Controller {
 	private GridPane grd1;
 	
 	
-	
-	
 	public void easyMethod(ActionEvent event){
 		
 		try {
@@ -52,15 +50,24 @@ public class Controller {
 
 		for (int i = 0; i < bs.darCasillas().length; i++) {
 			for (int j = 0; j < bs.darCasillas()[0].length; j++) {
+				int columns=i;
+				int rows=j;
 				bs.darCasillas()[i][j].modificarValor(bs.cantidadMinasAlrededor(i, j));
 				Button b = new Button();
+				b.setOnAction(e->{
+					openBoxes(b,columns, rows);
+				});
 				b.setText(bs.darCasillas()[i][j].mostrarValorCasilla());
 				b.setPrefWidth(10);
-				grd1.add(b, i, j);
+				grd1.add(b, j,i);
 			}
 		}
 		grd1.setAlignment(Pos.CENTER);
 		ac.setCenter(grd1);
+	}
+	private void openBoxes(Button b, int columns, int rows) {
+		bs.abrirCasilla(columns, rows);
+		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
 	}
 	
 }
