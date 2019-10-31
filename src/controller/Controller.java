@@ -1,8 +1,9 @@
-package interfaz;
+package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -21,8 +22,8 @@ public class Controller {
 	public void easyMethod(ActionEvent event){
 		
 		try {
-			bs = new Buscaminas(1);
-			printMatrix();
+			bs = new Buscaminas(bs.PRINCIPIANTE);
+			printMatrixAndPlay();
 		} catch (NivelNoExtisteException e) {
 			e.printStackTrace();
 		}
@@ -30,8 +31,8 @@ public class Controller {
 	public void intermMethod(ActionEvent event){
 			
 			try {
-				bs = new Buscaminas(2);
-				printMatrix();
+				bs = new Buscaminas(bs.INTERMEDIO);
+				printMatrixAndPlay();
 			} catch (NivelNoExtisteException e) {
 				e.printStackTrace();
 			}
@@ -39,15 +40,14 @@ public class Controller {
 	public void hardMethod(ActionEvent event){
 		
 		try {
-			bs = new Buscaminas(3);
-			printMatrix();
+			bs = new Buscaminas(bs.EXPERTO);
+			printMatrixAndPlay();
 		} catch (NivelNoExtisteException e) {
 			e.printStackTrace();
 		}
 	}
-	private void printMatrix() {
+	private void printMatrixAndPlay() {
 			grd1= new GridPane();
-
 		for (int i = 0; i < bs.darCasillas().length; i++) {
 			for (int j = 0; j < bs.darCasillas()[0].length; j++) {
 				int columns=i;
@@ -67,6 +67,12 @@ public class Controller {
 	}
 	private void openBoxes(Button b, int columns, int rows) {
 		bs.abrirCasilla(columns, rows);
+		if(bs.darPerdio()==true) {
+			Alert x = new Alert(Alert.AlertType.INFORMATION);
+			x.setTitle("You loose");
+			x.setContentText("X_X Perdiste al abrir una Mina :( ");
+			x.showAndWait();
+		}
 		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
 	}
 	
