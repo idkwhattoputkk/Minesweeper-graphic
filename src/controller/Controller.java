@@ -72,6 +72,14 @@ public class Controller {
 			x.setTitle("You loose");
 			x.setContentText("X_X Perdiste al abrir una Mina :( ");
 			x.showAndWait();
+			if(bs.darCasillas().length==bs.COLUMNAS_PRINCIPIANTE) {
+				easyMethod(null);
+			}else if(bs.darCasillas()[0].length==bs.FILAS_EXPERTO) {
+				intermMethod(null);
+			}else {
+				hardMethod(null);
+			}
+			
 		}
 		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
 	}
