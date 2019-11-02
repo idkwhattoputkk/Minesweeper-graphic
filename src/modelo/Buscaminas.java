@@ -319,7 +319,7 @@ public class Buscaminas {
 			for(int j=0;j<casillas[i].length&&stop==false;j++) {
 				if(!casillas[i][j].esMina() && !casillas[i][j].darSeleccionada() ) {
 					casillas[i][j].destapar();
-					nhull="La fila es: "+i+" la columna es: "+j+" ";
+					nhull=""+i+" e "+j+" ";
 					stop=true;
 				}else {
 					nhull="no hay pistas para dar";

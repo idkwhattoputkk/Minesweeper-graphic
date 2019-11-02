@@ -54,10 +54,10 @@ public class Controller {
 				int rows=j;
 				bs.darCasillas()[i][j].modificarValor(bs.cantidadMinasAlrededor(i, j));
 				Button b = new Button();
+				b.setText(bs.darCasillas()[i][j].mostrarValorCasilla());
 				b.setOnAction(e->{
 					openBoxes(b,columns, rows);
 				});
-				b.setText(bs.darCasillas()[i][j].mostrarValorCasilla());
 				b.setPrefWidth(10);
 				grd1.add(b, j,i);
 			}
@@ -79,9 +79,14 @@ public class Controller {
 			}else {
 				hardMethod(null);
 			}
-			
+		}else {
+			if(bs.gano()) {
+				Alert x = new Alert(Alert.AlertType.INFORMATION);
+				x.setTitle("You Win");
+				x.setContentText("Felicitaciones Ganaste!!!!!!!");
+				x.showAndWait();
+			}
 		}
 		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
 	}
-	
 }
