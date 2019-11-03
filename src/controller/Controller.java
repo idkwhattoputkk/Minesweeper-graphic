@@ -89,4 +89,8 @@ public class Controller {
 		}
 		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
 	}
+	public void givePista(ActionEvent event) {
+		bs.darPista();
+		printMatrixAndPlay();
+		}
 }

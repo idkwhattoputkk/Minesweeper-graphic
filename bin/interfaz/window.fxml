@@ -12,6 +12,7 @@
    <bottom>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="349.0" text="Desarrollado por A00351911" BorderPane.alignment="CENTER">
       </Label>
+      <Button onAction="#givePista" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="163.0" text="Dar pista" />
    </bottom>
    <top>
       <VBox alignment="CENTER" prefHeight="131.0" prefWidth="758.0" BorderPane.alignment="CENTER">
@@ -21,17 +22,17 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="easy" onAction="#easyMethod" prefHeight="25.0" prefWidth="163.0" text="Easy">
+            <Button  onAction="#easyMethod" prefHeight="25.0" prefWidth="163.0" text="Easy">
                <VBox.margin>
                   <Insets left="-500.0" top="-30.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="hard" onAction="#hardMethod" prefHeight="25.0" prefWidth="163.0" text="Hard">
+            <Button  onAction="#hardMethod" prefHeight="25.0" prefWidth="163.0" text="Hard">
                <VBox.margin>
                   <Insets left="500.0" top="-30.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="intermedium" onAction="#intermMethod" prefHeight="25.0" prefWidth="163.0" text="intermedium">
+            <Button  onAction="#intermMethod" prefHeight="25.0" prefWidth="163.0" text="intermedium">
                <VBox.margin>
                   <Insets top="-30.0" />
                </VBox.margin>
