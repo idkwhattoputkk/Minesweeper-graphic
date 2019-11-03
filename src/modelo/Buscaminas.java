@@ -250,7 +250,8 @@ public class Buscaminas {
 
 		for(int i=0;i<casillas.length;i++) {
 			for(int j=0;j<casillas[i].length;j++) {
-				casillas[i][j].destapar();
+				if(!casillas[i][j].esMina())
+					casillas[i][j].destapar();
 			}
 		}
 

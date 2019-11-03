@@ -13,3 +13,8 @@
     -fx-font-family: "Arial ";
      -fx-font-size: 15px;
 }
+.root{
+	-fx-background-color:white;
+	-fx-background-size: cover;
+	-fx-background-position: center;
+}

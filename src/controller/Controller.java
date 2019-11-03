@@ -112,4 +112,14 @@ public class Controller {
 			}
 		}
 	}
+	public void solveGame(ActionEvent e) {
+		try{
+		bs.resolver();
+		printMatrixAndPlay();
+	}catch(Exception ex) {
+		Alert x = new Alert(Alert.AlertType.WARNING);
+		x.setContentText("No has escogido el nivel aun");
+		x.showAndWait();
+	}
+	}
 }

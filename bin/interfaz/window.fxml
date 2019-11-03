@@ -2,18 +2,17 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane  fx:id="ac" prefHeight="565.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
-   <bottom>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="349.0" text="Desarrollado por A00351911" BorderPane.alignment="CENTER">
-      </Label>
-      <Button onAction="#givePista" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="163.0" text="Dar pista" />
-   </bottom>
+     <left>
+         <Button onAction="#givePista" contentDisplay="CENTER" prefHeight="25.0" prefWidth="163.0" text="Dar pista" BorderPane.alignment="BOTTOM_LEFT" />
+    </left>
+   	 <right>
+            <Button onAction="#solveGame" contentDisplay="LEFT" prefHeight="24.0" prefWidth="173.0" text="resolver" BorderPane.alignment="BOTTOM_RIGHT" />
+  	 </right>
    <top>
       <VBox alignment="CENTER" prefHeight="131.0" prefWidth="758.0" BorderPane.alignment="CENTER">
          <children>
