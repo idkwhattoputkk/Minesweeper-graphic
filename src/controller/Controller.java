@@ -67,6 +67,22 @@ public class Controller {
 	}
 	private void openBoxes(Button b, int columns, int rows) {
 		bs.abrirCasilla(columns, rows);
+		checkLost();
+		checkWin();
+		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
+	}
+	public void givePista(ActionEvent event) {
+		try{
+			bs.darPista();
+			printMatrixAndPlay();
+			checkWin();
+		}catch(Exception e) {
+			Alert x = new Alert(Alert.AlertType.WARNING);
+			x.setContentText("No has escogido el nivel aun");
+			x.showAndWait();
+		}
+	}
+	private void checkLost() {
 		if(bs.darPerdio()==true) {
 			Alert x = new Alert(Alert.AlertType.INFORMATION);
 			x.setTitle("You loose");
@@ -79,18 +95,21 @@ public class Controller {
 			}else {
 				hardMethod(null);
 			}
-		}else {
-			if(bs.gano()) {
-				Alert x = new Alert(Alert.AlertType.INFORMATION);
-				x.setTitle("You Win");
-				x.setContentText("Felicitaciones Ganaste!!!!!!!");
-				x.showAndWait();
+		}
+	}
+	private void checkWin() {
+		if(bs.gano()==true) {
+			Alert x = new Alert(Alert.AlertType.INFORMATION);
+			x.setTitle("You Win");
+			x.setContentText("Felicitaciones Ganaste!!!!!!!");
+			x.showAndWait();
+			if(bs.darCasillas().length==bs.COLUMNAS_PRINCIPIANTE) {
+				easyMethod(null);
+			}else if(bs.darCasillas()[0].length==bs.FILAS_EXPERTO) {
+				intermMethod(null);
+			}else {
+				hardMethod(null);
 			}
 		}
-		b.setText(bs.darCasillas()[columns][rows].mostrarValorCasilla());
 	}
-	public void givePista(ActionEvent event) {
-		bs.darPista();
-		printMatrixAndPlay();
-		}
 }
