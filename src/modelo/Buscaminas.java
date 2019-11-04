@@ -254,7 +254,7 @@ public class Buscaminas {
 					casillas[i][j].destapar();
 			}
 		}
-
+		perdio=true;
 	}
 
 	/**

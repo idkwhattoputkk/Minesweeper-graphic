@@ -86,7 +86,7 @@ public class Controller {
 		if(bs.darPerdio()==true) {
 			Alert x = new Alert(Alert.AlertType.INFORMATION);
 			x.setTitle("You loose");
-			x.setContentText("X_X Perdiste al abrir una Mina :( ");
+			x.setContentText("X_X Perdiste ");
 			x.showAndWait();
 			if(bs.darCasillas().length==bs.COLUMNAS_PRINCIPIANTE) {
 				easyMethod(null);
@@ -116,6 +116,7 @@ public class Controller {
 		try{
 		bs.resolver();
 		printMatrixAndPlay();
+		checkLost();
 	}catch(Exception ex) {
 		Alert x = new Alert(Alert.AlertType.WARNING);
 		x.setContentText("No has escogido el nivel aun");
